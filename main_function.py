@@ -9,8 +9,8 @@
 initiative_list = []
 initiative_list_ordered = []
 
-name = input("Name")
-value = int(input("Value"))
+name = input("Name: ")
+value = int(input("Value: "))
 
 initiative_list.append(name)
 

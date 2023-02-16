@@ -12,6 +12,13 @@ initiative_list_ordered = []
 name = input("Name: ")
 value = int(input("Value: "))
 
-initiative_list.append(name)
+character = name,value
+
+initiative_list.append(character)
+
+name = input("Name: ")
+value = int(input("Value: "))
+
+initiative_list.append(character)
 
 print(initiative_list)

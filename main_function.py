@@ -2,10 +2,13 @@
 # Main code functionality
 # Written by Max Creutz
 
-class Initiative_tracker:
-    def __init__(self):
-        pass
+# class Initiative_tracker:
+#     def __init__(self):
+#         pass
 
-    initiative_list = []
-    initiative_list_ordered = []
-    
+initiative_list = []
+initiative_list_ordered = []
+
+name = input("Name")
+value = int(input("Value"))
+

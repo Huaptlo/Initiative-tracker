@@ -25,6 +25,6 @@ initiative_list.append(character)
 
 print(initiative_list)
 
-initiative_list_ordered = initiative_list.sorted
+initiative_list_ordered = initiative_list
 
-print("Sorted: "+ initiative_list_ordered)
+print("Sorted: ", initiative_list_ordered)

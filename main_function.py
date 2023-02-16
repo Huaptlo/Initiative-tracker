@@ -12,3 +12,6 @@ initiative_list_ordered = []
 name = input("Name")
 value = int(input("Value"))
 
+initiative_list.append(name)
+
+print(initiative_list)

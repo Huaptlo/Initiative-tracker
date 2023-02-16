@@ -27,4 +27,4 @@ print(initiative_list)
 
 initiative_list_ordered = initiative_list.sorted
 
-print("Sorted: ", initiative_list_ordered)
+print("Sorted: "+ initiative_list_ordered)

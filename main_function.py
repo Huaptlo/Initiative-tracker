@@ -19,6 +19,9 @@ initiative_list.append(character)
 name = input("Name: ")
 value = int(input("Value: "))
 
+character = name,value
+
 initiative_list.append(character)
 
 print(initiative_list)
+

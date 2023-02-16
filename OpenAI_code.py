@@ -1,3 +1,6 @@
+# Code written by OpenAI
+
+
 name_value_list = []
 
 # loop to allow user to add as many names and values as they want

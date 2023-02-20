@@ -8,15 +8,15 @@ name_value_list = []
 # Looppi joka pyytää nimeä ja arvoa jotka lisätään listaan
 while True:
     # Kysytään nimeä ja arvoa
-    name = input("Enter a name (or 'end' to exit): ")
+    name = input("Name (or 'end' to exit): ")
     if name == 'end':
         break
-    value = int(input("Enter a numeric value: "))
+    value = int(input("Initiative: "))
 
-    # add the name and value to the list
+    # Lisätään nimi ja arvo listaan
     name_value_list.append((name, value))
 
-# sort the list by value in descending order
+# Järjestetään lista takaperin
 name_value_list.sort(key=lambda x: x[1], reverse=True)
 
 # loop to allow user to cycle through the sorted list

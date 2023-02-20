@@ -19,12 +19,12 @@ while True:
 # Järjestetään lista takaperin
 name_value_list.sort(key=lambda x: x[1], reverse=True)
 
-# loop to allow user to cycle through the sorted list
+# Looppi jolla käyttäjä saa seuraavan nimen ja arvon
 current_index = 0
 while True:
     current_name, current_value = name_value_list[current_index]
     print(f"Highest name: {current_name}, value: {current_value}")
-    input_str = input("Press enter to see the next highest value, or type 'done' to exit: ")
-    if input_str == 'done':
+    input_str = input("Press enter for next (or type 'end' to exit): ")
+    if input_str == 'end':
         break
     current_index = (current_index + 1) % len(name_value_list)

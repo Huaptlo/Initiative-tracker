@@ -1,13 +1,15 @@
-# Code written by OpenAI
+# Initiative tracker project 2023
+# Main code functionality
+# Written by Max Creutz
 
 
 name_value_list = []
 
-# loop to allow user to add as many names and values as they want
+# Looppi joka pyytää nimeä ja arvoa jotka lisätään listaan
 while True:
-    # prompt user to enter a name and a numeric value
-    name = input("Enter a name (or 'done' to exit): ")
-    if name == 'done':
+    # Kysytään nimeä ja arvoa
+    name = input("Enter a name (or 'end' to exit): ")
+    if name == 'end':
         break
     value = int(input("Enter a numeric value: "))
 

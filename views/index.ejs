@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thats cool init?</title>
+</head>
+<body>
+    <h1>Initiative tracker</h1>
+
+    <form action="/" method="post">
+      <input type="text" name="chrName" placeholder="Character Name" autocomplete="off">
+      <input type="text" name="chrIniti" placeholder="Initiative" autocomplete="off">
+      <button type="submit" name="addCharacter">Add character</button>
+    </form>
+    
+<div>
+    <% for (var i=0; i < characterList.length; i++) { %>
+        <div>
+            <p><%= characterList[i].name + " " + characterList[i].initiative %></p>
+        </div>
+        <% } %>
+    </div>
+
+</body>
+</html>

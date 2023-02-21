@@ -1,15 +1,16 @@
+# Lista johon lisätään nimet ja arvot
 name_value_list = []
 
+# Lisää nimen ja arvon listaan
 def add_name_value(name, value):
-    # Lisää nimen ja arvon listaan
     name_value_list.append((name, value))
 
+# Järjestää nimet listassa takaperin
 def sort_names_values():
-    # Järjestää nimet listassa takaperin
     name_value_list.sort(key=lambda x: x[1], reverse=True)
 
+# Tulostaa ensimmäisen listassa olevan nimen ja arvon
 def print_highest_value(current_index):
-    # Tulostaa ensimmäisen listassa olevan nimen ja arvon
     current_name, current_value = name_value_list[current_index]
     print(f"Nimi: {current_name}, arvo: {current_value}")
 

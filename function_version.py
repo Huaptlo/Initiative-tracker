@@ -11,11 +11,11 @@ def sort_names_values():
 def print_highest_value(current_index):
     # Tulostaa ensimmäisen listassa olevan nimen ja arvon
     current_name, current_value = name_value_list[current_index]
-    print(f"Highest name: {current_name}, value: {current_value}")
+    print(f"Nimi: {current_name}, arvo: {current_value}")
 
 # Esimerkkejä käytöstä
 add_name_value('Pekka', 10)
 add_name_value('Jukka', 5)
 add_name_value('Örkki 1', 20)
 sort_names_values()
-print_highest_value(0) # Tulostaa "Highest name: Charlie, value: 20"
+print_highest_value(0) # Tulostaa "Nimi: Örkki 1, arvo: 20"

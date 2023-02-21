@@ -2,15 +2,18 @@
 # Main code functionality
 # Written by Max Creutz
 
-
+# Lista johon nimet ja arvot lisätään
 name_value_list = []
 
-# Looppi joka pyytää nimeä ja arvoa jotka lisätään listaan
+# Looppi joka pyytää nimeä ja arvoa jotka lisätään listaan 
+# Loopin voi lopettaa ainastaan kun kysytään nimeä että tulee pakosti uusi nimi ja arvo yhdistelmä mikä lisätään listaan
 while True:
-    # Kysytään nimeä ja arvoa
+    # Kysytään nimeä
     name = input("Nimi (tai 'Q' lopettaaksesi): ")
+    # Lopettaa loopin
     if name == 'Q':
         break
+    # Kysytään arvoa
     value = int(input("Aloite: "))
 
     # Lisätään nimi ja arvo listaan

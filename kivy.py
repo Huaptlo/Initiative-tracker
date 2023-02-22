@@ -1,12 +1,14 @@
 import kivy
-kivy.require('2.1.0')
-
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.core.window import Window
 from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
+from kivy.config import Config
+from kivy.base import runTouchApp
+kivy.require('2.1.0')
+Config.set('graphics', 'resizable', True)
 
 
 class MyBoxLayout(BoxLayout):

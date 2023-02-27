@@ -60,11 +60,12 @@ class MyFloatLayout(FloatLayout):
         self.current_index = 0
 
     def highlight_current(self):
-        self.current_label.text = ''
-        if self.values:
-            n = self.names[len(self.values) - self.current_index - 1]
-            v = self.values[len(self.values) - self.current_index - 1]
-            self.current_label.text = f'[b][color=FF0000]{n}: {v}[/color][/b]'
+        self.list_label.text = ''
+        for i, (n, v) in enumerate(zip(reversed(self.names), reversed(self.values))):
+            if i == len(self.values) - self.current_index - 1:
+                self.list_label.text += f'[b][color=FF0000]{n}: {v}[/color][/b]\n'
+            else:
+                self.list_label.text += f'{n}: {v}\n'
 
 class MyApp(App):
     def build(self):

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Thats cool init?</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Initiative tracker</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Initiative</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% chrList.forEach(function(character) { %>
+          <tr>
+            <td><%= character.name %></td>
+            <td><%= character.initiative %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <form action="/" method="post">
+      <label for="name">Name:</label>
+      <input type="text"  name="chrName" required autocomplete="off">
+      <label for="initiative">Initiative:</label>
+      <input type="number"  name="chrIniti" min="1" max="100" required autocomplete="off">
+      <input type="submit" value="Add Character">
+    </form>
+  </div>
+</body>
+</html>

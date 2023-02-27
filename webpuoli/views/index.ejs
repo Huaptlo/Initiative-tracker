@@ -8,6 +8,15 @@
 <body>
   <div class="container">
     <h1>Initiative tracker</h1>
+      <form action="/" method="post">
+        <label for="name">Name:</label>
+        <input type="text"  name="chrName" required autocomplete="off">
+        <label  for="initiative">Initiative:</label>
+        <input type="number"  name="chrIniti" min="1" max="100" required autocomplete="off">
+        <input type="submit" value="Add Character">
+      </form>
+    </div>
+    <div class ="characterList">
     <table>
       <thead>
         <tr>
@@ -18,19 +27,19 @@
       <tbody>
         <% chrList.forEach(function(character) { %>
           <tr>
-            <td><%= character.name %></td>
-            <td><%= character.initiative %></td>
+            <td class="name"><%= character.name %></td>
+            <td class="initiative"><%= character.initiative %></td>
           </tr>
         <% }); %>
       </tbody>
     </table>
-    <form action="/" method="post">
-      <label for="name">Name:</label>
-      <input type="text"  name="chrName" required autocomplete="off">
-      <label for="initiative">Initiative:</label>
-      <input type="number"  name="chrIniti" min="1" max="100" required autocomplete="off">
-      <input type="submit" value="Add Character">
-    </form>
   </div>
+
+  <div id="buttons">
+    <button id="startEncounter">Start Encounter</button>
+    <button id="endEncounter" disabled>End Encounter</button>
+    <button id="nextTurn" disabled>Next Turn</button>
+  </div>
+    
 </body>
 </html>

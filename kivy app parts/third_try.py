@@ -20,23 +20,27 @@ class MyFloatLayout(FloatLayout):
         self.add_widget(self.value_input)
 
         # Create add button
-        self.add_button = Button(text='Add', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.7})
+        self.add_button = Button(text='Add', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.8})
         self.add_button.bind(on_press=self.add_item)
         self.add_widget(self.add_button)
 
         # Create clear button
-        self.clear_button = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x': 0.6, 'y': 0.2})
+        self.clear_button = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.1})
         self.clear_button.bind(on_press=self.clear_list)
         self.add_widget(self.clear_button)
 
         # Create cycle button
-        self.cycle_button = Button(text='Cycle', size_hint=(0.2, 0.1), pos_hint={'x': 0.2, 'y': 0.2})
+        self.cycle_button = Button(text='Cycle', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.4})
         self.cycle_button.bind(on_press=self.cycle_list)
         self.add_widget(self.cycle_button)
 
-        # Create label to display list
-        self.list_label = Label(text='', size_hint=(0.6, 0.6), pos_hint={'x': 0.3, 'y': 0.3})
+        # Create label to display sorted list
+        self.list_label = Label(text='', size_hint=(0.6, 0.6), pos_hint={'x': 0.2, 'y': 0.2})
         self.add_widget(self.list_label)
+
+        # Create label to display current name and value
+        self.current_label = Label(text='', size_hint=(0.4, 0.1), pos_hint={'x': 0.3, 'y': 0.05}, markup=True)
+        self.add_widget(self.current_label)
 
     def add_item(self, instance):
         name = self.name_input.text
@@ -44,7 +48,9 @@ class MyFloatLayout(FloatLayout):
         if name and value:
             self.names.append(name)
             self.values.append(value)
-            self.list_label.text = '\n'.join([f'{n}: {v}' for n, v in zip(reversed(self.names), reversed(self.values))])
+            sorted_pairs = sorted(zip(self.names, self.values), reverse=True)
+            self.names, self.values = zip(*sorted_pairs)
+            self.list_label.text = '\n'.join([f'{n}: {v}' for n, v in zip(self.names, self.values)])
             self.current_index = 0
             self.highlight_current()
 
@@ -57,7 +63,7 @@ class MyFloatLayout(FloatLayout):
         self.names = []
         self.values = []
         self.list_label.text = ''
-        self.current_index = 0
+        self.current_label.text = ''
 
     def highlight_current(self):
         self.current_label.text = ''

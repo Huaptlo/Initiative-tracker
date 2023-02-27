@@ -14,13 +14,13 @@ class MyFloatLayout(FloatLayout):
         self.current_index = 0
 
         # Create input fields
-        self.name_input = TextInput(hint_text='Name', size_hint=(0.2, 0.1), pos_hint={'x': 0.1, 'y': 0.1})
+        self.name_input = TextInput(hint_text='Name', size_hint=(0.4, 0.1), pos_hint={'x': 0.1, 'y': 0.85})
         self.add_widget(self.name_input)
-        self.value_input = TextInput(hint_text='Value', size_hint=(0.2, 0.1), pos_hint={'x': 0.1, 'y': 0.2})
+        self.value_input = TextInput(hint_text='Value', size_hint=(0.2, 0.1), pos_hint={'x': 0.6, 'y': 0.85})
         self.add_widget(self.value_input)
 
         # Create add button
-        self.add_button = Button(text='Add', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.8})
+        self.add_button = Button(text='Add', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.7})
         self.add_button.bind(on_press=self.add_item)
         self.add_widget(self.add_button)
 
@@ -30,7 +30,7 @@ class MyFloatLayout(FloatLayout):
         self.add_widget(self.clear_button)
 
         # Create cycle button
-        self.cycle_button = Button(text='Cycle', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.4})
+        self.cycle_button = Button(text='Cycle', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.2})
         self.cycle_button.bind(on_press=self.cycle_list)
         self.add_widget(self.cycle_button)
 

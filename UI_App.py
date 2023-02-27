@@ -1,3 +1,7 @@
+# Initiative tracker project 2023
+# Main code functionality
+# Written by Max Creutz
+
 import kivy
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout

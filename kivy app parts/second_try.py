@@ -25,12 +25,12 @@ class MyFloatLayout(FloatLayout):
         self.add_widget(self.add_button)
 
         # Create clear button
-        self.clear_button = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.1})
+        self.clear_button = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x': 0.6, 'y': 0.2})
         self.clear_button.bind(on_press=self.clear_list)
         self.add_widget(self.clear_button)
 
         # Create cycle button
-        self.cycle_button = Button(text='Cycle', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.2})
+        self.cycle_button = Button(text='Cycle', size_hint=(0.2, 0.1), pos_hint={'x': 0.2, 'y': 0.2})
         self.cycle_button.bind(on_press=self.cycle_list)
         self.add_widget(self.cycle_button)
 

@@ -44,6 +44,7 @@ class MyFloatLayout(FloatLayout):
         
         # Add the name-value pair to the list and clear the input fields
         self.name_value_list.append((name, value))
+        self.name_value_list.sort(key=lambda x: x[1], reverse=True)
         self.name_input.text = ''
         self.value_input.text = ''
         

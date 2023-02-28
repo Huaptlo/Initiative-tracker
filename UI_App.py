@@ -64,7 +64,7 @@ class MyApp(App):
     
     def build(self):
         # Set the app to full-screen
-        # Window.fullscreen = True
+        Window.fullscreen = True
         
         # Create a layout for the app
         layout = MyFloatLayout()

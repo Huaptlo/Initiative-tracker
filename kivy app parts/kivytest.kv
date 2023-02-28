@@ -1,0 +1,23 @@
+KV = ("""
+<Prin>
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'test.png'
+                
+        Label:
+            id: label
+            text: 'TEXT'
+                
+        Button:
+            text: 'Start!'
+            size_hint: None, None
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            padding: 10, 0
+            on_press: root.start()
+            
+""")

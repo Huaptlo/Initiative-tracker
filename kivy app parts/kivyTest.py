@@ -5,7 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 kivy.require('2.1.0')
 
 class Prin(BoxLayout):
-    Builder.load_string(KV)
+    Builder.load_string('.kv')
 
     def __init__(self, **kwargs):
         super(Prin, self).__init__(**kwargs)

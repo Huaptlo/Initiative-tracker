@@ -1,0 +1,81 @@
+import kivy
+kivy.require('2.1.0')
+
+from kivy.app import App
+from kivy.uix.button import Button
+from kivy.uix.label import Label
+from kivy.uix.textinput import TextInput
+from kivy.uix.floatlayout import FloatLayout
+
+class MyApp(App):
+    def build(self):
+        # Create the float layout
+        layout = FloatLayout()
+
+        # Create the 'close' button in the top right corner
+        close_button = Button(text='X', size_hint=(.1, .1), pos_hint={'x': .9, 'y': .9})
+        close_button.bind(on_press=self.stop)
+        layout.add_widget(close_button)
+
+        # Create the input fields
+        name_input = TextInput(text='', size_hint=(.4, .1), pos_hint={'x': .1, 'y': .8})
+        value_input = TextInput(text='', size_hint=(.4, .1), pos_hint={'x': .5, 'y': .8})
+        layout.add_widget(name_input)
+        layout.add_widget(value_input)
+
+        # Create the 'add' button
+        add_button = Button(text='Add', size_hint=(.2, .1), pos_hint={'x': .4, 'y': .7})
+        layout.add_widget(add_button)
+
+        # Create the 'clear' button
+        clear_button = Button(text='Clear', size_hint=(.2, .1), pos_hint={'x': .4, 'y': .6})
+        layout.add_widget(clear_button)
+
+        # Create the list display field
+        list_display = Label(text='', size_hint=(.8, .4), pos_hint={'x': .1, 'y': .1}, color=(0,0,0,1))
+        layout.add_widget(list_display)
+
+        # Create the current value display field
+        current_value_display = Label(text='', size_hint=(.8, .1), pos_hint={'x': .1, 'y': .5}, color=(1,1,1,1))
+        layout.add_widget(current_value_display)
+
+        # Create the 'next' button
+        next_button = Button(text='Next', size_hint=(.2, .1), pos_hint={'x': .4, 'y': .3})
+        layout.add_widget(next_button)
+
+        # Define the add_button function
+        def add_button_callback(instance):
+            name = name_input.text
+            value = value_input.text
+            list_display.text += name + ': ' + value + '\n'
+            name_input.text = ''
+            value_input.text = ''
+
+        # Define the clear_button function
+        def clear_button_callback(instance):
+            list_display.text = ''
+            current_value_display.text = ''
+
+        # Define the next_button function
+        def next_button_callback(instance):
+            current_value = current_value_display.text
+            values = [line.split(': ')[1] for line in list_display.text.split('\n') if line]
+            if current_value in values:
+                index = values.index(current_value)
+                if index == len(values) - 1:
+                    current_value_display.text = values[0]
+                else:
+                    current_value_display.text = values[index+1]
+            else:
+                if values:
+                    current_value_display.text = values[0]
+
+        # Bind the buttons to their functions
+        add_button.bind(on_press=add_button_callback)
+        clear_button.bind(on_press=clear_button_callback)
+        next_button.bind(on_press=next_button_callback)
+
+        return layout
+
+if __name__ == '__main__':
+    MyApp().run()

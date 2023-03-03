@@ -54,6 +54,22 @@ class MyFloatLayout(FloatLayout):
         
         # Update the label to display the list of name-value pairs
         self.label.text = '\n'.join(['{}: {}'.format(name, value) for name, value in self.name_value_list])
+
+        # Add label to display current value
+        self.value_label = Label(text=str(self.values[self.index]), size_hint=(0.5, 0.2), pos_hint={'x': 0.25, 'y': 0.4}, color=(0, 0, 0, 1),
+                                 font_size=50, halign='center', valign='middle')
+        self.add_widget(self.value_label)
+
+        # Add button to cycle through values
+        button = Button(text='Next',
+                        size_hint=(0.2, 0.1),
+                        pos_hint={'x': 0.4, 'y': 0.2})
+        button.bind(on_press=self.next_value)
+        self.add_widget(button)
+    
+    def next_value(self, instance):
+        self.index = (self.index + 1) % len(self.values)
+        self.value_label.text = str(self.values[self.index])
     
     def close_app(self, instance):
         # Close the app

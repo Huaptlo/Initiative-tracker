@@ -28,11 +28,11 @@ class MyApp(App):
         layout.add_widget(add_button)
 
         # Create the 'clear' button
-        clear_button = Button(text='Clear', size_hint=(.2, .1), pos_hint={'x': .4, 'y': .6})
+        clear_button = Button(text='Clear', size_hint=(.2, .1), pos_hint={'x': .4, 'y': .2})
         layout.add_widget(clear_button)
 
         # Create the list display field
-        list_display = Label(text='', size_hint=(.8, .4), pos_hint={'x': .1, 'y': .1}, color=(0,0,0,1))
+        list_display = Label(text='', size_hint=(.8, .4), pos_hint={'x': .1, 'y': .1}, color=(1,1,1,1))
         layout.add_widget(list_display)
 
         # Create the current value display field
@@ -40,7 +40,7 @@ class MyApp(App):
         layout.add_widget(current_value_display)
 
         # Create the 'next' button
-        next_button = Button(text='Next', size_hint=(.2, .1), pos_hint={'x': .4, 'y': .3})
+        next_button = Button(text='Next', size_hint=(.2, .1), pos_hint={'x': .7, 'y': .5})
         layout.add_widget(next_button)
 
         # Define the add_button function

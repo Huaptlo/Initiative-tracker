@@ -19,12 +19,12 @@ class MyApp(App):
 
         # Create the input fields
         name_input = TextInput(text='', size_hint=(.4, .1), pos_hint={'x': .1, 'y': .8})
-        value_input = TextInput(text='', size_hint=(.4, .1), pos_hint={'x': .5, 'y': .8})
+        value_input = TextInput(text='', size_hint=(.2, .1), pos_hint={'x': .5, 'y': .8})
         layout.add_widget(name_input)
         layout.add_widget(value_input)
 
         # Create the 'add' button
-        add_button = Button(text='Add', size_hint=(.2, .1), pos_hint={'x': .4, 'y': .7})
+        add_button = Button(text='Add', size_hint=(.2, .1), pos_hint={'x': .7, 'y': .8})
         layout.add_widget(add_button)
 
         # Create the 'clear' button

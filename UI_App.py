@@ -61,9 +61,7 @@ class MyFloatLayout(FloatLayout):
         self.add_widget(self.value_label)
 
         # Add button to cycle through values
-        button = Button(text='Next',
-                        size_hint=(0.2, 0.1),
-                        pos_hint={'x': 0.4, 'y': 0.2})
+        button = Button(text='Next', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.2})
         button.bind(on_press=self.next_value)
         self.add_widget(button)
     

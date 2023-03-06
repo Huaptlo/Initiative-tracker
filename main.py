@@ -17,23 +17,23 @@ class MyApp(App):
 
         # Create input fields and add button
         name_input = TextInput(hint_text='Enter name', size_hint=(0.5, 0.1), pos_hint={'x':0.05, 'y':0.8})
-        value_input = TextInput(hint_text='Enter value', size_hint=(0.15, 0.1), pos_hint={'x':0.6, 'y':0.8})
-        add_btn = Button(text='Add', size_hint=(0.15, 0.1), pos_hint={'x':0.75, 'y':0.8})
+        value_input = TextInput(hint_text='Enter value', size_hint=(0.15, 0.1), pos_hint={'x':0.55, 'y':0.8})
+        add_btn = Button(text='Add', size_hint=(0.15, 0.1), pos_hint={'x':0.7, 'y':0.8})
         add_btn.bind(on_press=lambda x: self.add_to_list(name_input.text, value_input.text))
         layout.add_widget(name_input)
         layout.add_widget(value_input)
         layout.add_widget(add_btn)
 
         # Create list field and clear button
-        self.list_label = Label(text='', size_hint=(0.9, 0.5), pos_hint={'x':0.5, 'y':0.5}, color=(1,1,1,1), halign='left', valign='top')
-        clear_btn = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x':0.75, 'y':0.1})
+        self.list_label = Label(text='List', size_hint=(0.9, 0.5), pos_hint={'x':0.01, 'y':0.2}, color=(1,1,1,1), halign='left', valign='top')
+        clear_btn = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x':0.37, 'y':0.1})
         clear_btn.bind(on_press=self.clear_list)
         layout.add_widget(self.list_label)
         layout.add_widget(clear_btn)
 
         # Create current value field and next button
-        self.value_label = Label(text='', size_hint=(0.6, 0.1), pos_hint={'x':0.2, 'y':0.1}, color=(1,1,1,1), halign='center', valign='middle')
-        next_btn = Button(text='Next', size_hint=(0.2, 0.1), pos_hint={'x':0.75, 'y':0.2})
+        self.value_label = Label(text='Current turn', size_hint=(0.9, 0.1), pos_hint={'x':0.01, 'y':0.7}, color=(1,1,1,1), halign='center', valign='middle')
+        next_btn = Button(text='Next', size_hint=(0.2, 0.2), pos_hint={'x':0.75, 'y':0.5})
         next_btn.bind(on_press=self.show_next_value)
         layout.add_widget(self.value_label)
         layout.add_widget(next_btn)

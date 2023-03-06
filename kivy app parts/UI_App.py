@@ -30,7 +30,7 @@ class MyFloatLayout(FloatLayout):
         self.add_widget(self.add_button)
         
         # Create a label to display the list of name-value pairs
-        self.label = Label(text='', size_hint=(0.8, 0.4), pos_hint={'x': 0.1, 'y': 0}, color=(0, 0, 0, 1))
+        self.label = Label(text='Test', size_hint=(0.8, 0.4), pos_hint={'x': 0.1, 'y': 0}, color=(1, 1, 1, 1))
         self.add_widget(self.label)
         
         # Create a button to close the app
@@ -56,14 +56,14 @@ class MyFloatLayout(FloatLayout):
         self.label.text = '\n'.join(['{}: {}'.format(name, value) for name, value in self.name_value_list])
 
         # Add label to display current value
-        self.value_label = Label(text=str(self.name_value_list[self.index]), size_hint=(0.5, 0.2), pos_hint={'x': 0.25, 'y': 0.4}, color=(0, 0, 0, 1),
-                                 font_size=50, halign='center', valign='middle')
-        self.add_widget(self.value_label)
+        # self.value_label = Label(text=str(self.name_value_list[self.index]), size_hint=(0.5, 0.2), pos_hint={'x': 0.25, 'y': 0.4}, color=(0, 0, 0, 1),
+        #                          font_size=50, halign='center', valign='middle')
+        # self.add_widget(self.value_label)
 
         # Add button to cycle through values
-        button = Button(text='Next', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.2})
-        button.bind(on_press=self.next_value)
-        self.add_widget(button)
+        # button = Button(text='Next', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.2})
+        # button.bind(on_press=self.next_value)
+        # self.add_widget(button)
     
     def next_value(self, instance):
         self.index = (self.index + 1) % len(self.values)

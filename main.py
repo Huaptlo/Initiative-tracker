@@ -11,14 +11,14 @@ class MyApp(App):
         layout = FloatLayout()
         self.list = []
         # Create close button
-        close_btn = Button(text='Close', size_hint=(0.1, 0.1), pos_hint={'x':0.9, 'y':0.9})
+        close_btn = Button(text='X', size_hint=(0.1, 0.1), pos_hint={'x':0.9, 'y':0.9})
         close_btn.bind(on_press=self.stop)
         layout.add_widget(close_btn)
 
         # Create input fields and add button
-        name_input = TextInput(text='', size_hint=(0.3, 0.1), pos_hint={'x':0.05, 'y':0.8})
-        value_input = TextInput(text='', size_hint=(0.3, 0.1), pos_hint={'x':0.4, 'y':0.8})
-        add_btn = Button(text='Add', size_hint=(0.2, 0.1), pos_hint={'x':0.75, 'y':0.8})
+        name_input = TextInput(hint_text='Enter name', size_hint=(0.5, 0.1), pos_hint={'x':0.05, 'y':0.8})
+        value_input = TextInput(hint_text='Enter value', size_hint=(0.15, 0.1), pos_hint={'x':0.6, 'y':0.8})
+        add_btn = Button(text='Add', size_hint=(0.15, 0.1), pos_hint={'x':0.75, 'y':0.8})
         add_btn.bind(on_press=lambda x: self.add_to_list(name_input.text, value_input.text))
         layout.add_widget(name_input)
         layout.add_widget(value_input)

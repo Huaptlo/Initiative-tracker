@@ -20,11 +20,11 @@ class MyFloatLayout(FloatLayout):
         # Create an empty list to store name-value pairs
         self.name_value_list = []
         
-        # Create input field for name
+        # Create a input field for name
         self.name_input = TextInput(hint_text='Enter Name', size_hint=(0.8, 0.1), pos_hint={'x': 0.1, 'y': 0.8})
         self.add_widget(self.name_input)
         
-        # Create input field for value
+        # Create a input field for value
         self.value_input = TextInput(hint_text='Enter Value', size_hint=(0.8, 0.1), pos_hint={'x': 0.1, 'y': 0.6})
         self.add_widget(self.value_input)
         
@@ -42,12 +42,12 @@ class MyFloatLayout(FloatLayout):
         self.close_button.bind(on_press=self.close_app)
         self.add_widget(self.close_button)
 
-        # Add label to display current value
+        # Create a label to display current value
         self.value_label = Label(text=str(self.name_value_list), size_hint=(0.5, 0.2), pos_hint={'x': 0.25, 'y': 0.4}, color=(0, 0, 0, 1),
                                  font_size=50, halign='center', valign='middle')
         self.add_widget(self.value_label)
 
-        # Add button to cycle through values
+        # Create a button to cycle through values
         button = Button(text='Next', size_hint=(0.2, 0.1), pos_hint={'x': 0.4, 'y': 0.2})
         button.bind(on_press=self.next_value)
         self.add_widget(button)

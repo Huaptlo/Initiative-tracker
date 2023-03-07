@@ -17,32 +17,38 @@ class MyApp(App):
         layout.add_widget(image)
 
         # Create close button
-        close_btn = Button(text='X', size_hint=(0.1, 0.1), pos_hint={'x':0.9, 'y':0.9})
-        close_btn.bind(on_press=self.stop)
-        layout.add_widget(close_btn)
+        self.close_btn = Button(text='X', size_hint=(0.1, 0.1), pos_hint={'x':0.9, 'y':0.9})
+        self.close_btn.bind(on_press=self.stop)
+        layout.add_widget(self.close_btn)
 
-        # Create input fields and add button
-        self.name_input = TextInput(hint_text='Enter name', size_hint=(0.5, 0.1), pos_hint={'x':0.05, 'y':0.8})
-        self.value_input = TextInput(hint_text='Enter value', size_hint=(0.15, 0.1), pos_hint={'x':0.55, 'y':0.8})
-        add_btn = Button(text='Add', size_hint=(0.15, 0.1), pos_hint={'x':0.7, 'y':0.8})
-        add_btn.bind(on_press=lambda x: self.add_to_list(self.name_input.text, self.value_input.text))
+        # Create text input fields
+        self.name_input = TextInput(hint_text='Enter name', size_hint=(0.5, 0.1), pos_hint={'x':0.05, 'y':0.8}, multiline=False)
+        self.value_input = TextInput(hint_text='Enter value', size_hint=(0.15, 0.1), pos_hint={'x':0.55, 'y':0.8}, multiline=False)
         layout.add_widget(self.name_input)
         layout.add_widget(self.value_input)
-        layout.add_widget(add_btn)
+    
+        # Create add button
+        self.add_btn = Button(text='Add', size_hint=(0.15, 0.1), pos_hint={'x':0.7, 'y':0.8})
+        self.add_btn.bind(on_press=lambda x: self.add_to_list(self.name_input.text, self.value_input.text))
+        layout.add_widget(self.add_btn)
 
-        # Create list field and clear button
+        # Create list field
         self.list_label = Label(text='List', size_hint=(0.9, 0.5), pos_hint={'x':0.01, 'y':0.2}, color=(0,0,0,1), halign='center', valign='top')
-        clear_btn = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x':0.37, 'y':0.1})
-        clear_btn.bind(on_press=self.clear_list)
         layout.add_widget(self.list_label)
-        layout.add_widget(clear_btn)
+
+        # Create clear button
+        self.clear_btn = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x':0.37, 'y':0.1})
+        self.clear_btn.bind(on_press=self.clear_list)
+        layout.add_widget(self.clear_btn)
 
         # Create current value field and next button
         self.value_label = Label(text='Current turn', size_hint=(0.9, 0.1), pos_hint={'x':0.01, 'y':0.7}, color=(0,0,0,1), halign='center', valign='top')
-        next_btn = Button(text='Next', size_hint=(0.2, 0.2), pos_hint={'x':0.75, 'y':0.5})
-        next_btn.bind(on_press=self.show_next_value)
         layout.add_widget(self.value_label)
-        layout.add_widget(next_btn)
+
+        # Create next button
+        self.next_btn = Button(text='Next', size_hint=(0.2, 0.2), pos_hint={'x':0.75, 'y':0.5})
+        self.next_btn.bind(on_press=self.show_next_value)
+        layout.add_widget(self.next_btn)
 
         return layout
 

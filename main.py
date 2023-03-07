@@ -41,6 +41,8 @@ class MyApp(App):
         return layout
 
     # Function for adding name and value to the list and sort in reverse order
+    # Only adds the name and value when the value is a integer
+    # Also clears the input fields
     def add_to_list(self, name, value):
         try:
             if name and value:

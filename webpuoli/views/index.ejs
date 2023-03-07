@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Thats cool init?</title>
   <link rel="stylesheet" href="/css/styles.css">
+  
 </head>
 <body>
   <div class="container">
@@ -16,8 +17,8 @@
         <input type="submit" value="Add Character">
       </form>
     </div>
-    <div class ="characterList">
-    <table>
+    <div class ="characterList" id="characterList">
+    <table id="table1">
       <thead>
         <tr>
           <th>Name</th>
@@ -27,8 +28,8 @@
       <tbody>
         <% chrList.forEach(function(character) { %>
           <tr>
-            <td class="name"><%= character.name %></td>
-            <td class="initiative"><%= character.initiative %></td>
+            <td class="name" id="nameList"><%= character.name %></td>
+            <td class="initiative" id="initiativeList"><%= character.initiative %></td>
           </tr>
         <% }); %>
       </tbody>
@@ -40,6 +41,7 @@
     <button id="endEncounter" disabled>End Encounter</button>
     <button id="nextTurn" disabled>Next Turn</button>
   </div>
-    
+
+  <script charset="UTF-8" src="/webpuoli/script.js"></script>
 </body>
 </html>

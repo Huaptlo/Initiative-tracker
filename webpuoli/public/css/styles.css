@@ -113,5 +113,10 @@ input[type="submit"]:hover {
   cursor: default;
 }
 
+.active{
+  font-weight: bold;
+  background-color: yellow;
+}
+
 
 

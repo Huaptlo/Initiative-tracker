@@ -17,7 +17,7 @@ const chrList = [
 ];
 
 app.get('/', (req, res) => {
-  //servu auki
+  // renderoidaan servu
   res.render('index', { chrList });
 });
 
@@ -26,8 +26,9 @@ app.post('/', (req, res) => {
   //luodaan hahmo objecti
   let newCharacter = {
     name: req.body.chrName,
-    initiative: parseInt(req.body.chrIniti)
+    initiative: req.body.chrIniti
   }
+  
   chrList.push(newCharacter);
   // lisätään hahmo listaan
   chrList.sort((a, b) => b.initiative - a.initiative);

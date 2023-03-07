@@ -5,11 +5,16 @@ from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
+from kivy.uix.image import Image
 
 class MyApp(App):
     def build(self):
         layout = FloatLayout()
         self.list = []
+
+        # Add a background image
+        image = Image(source='images/papyrus2.jpg', allow_stretch=True, keep_ratio=False)
+        layout.add_widget(image)
 
         # Create close button
         close_btn = Button(text='X', size_hint=(0.1, 0.1), pos_hint={'x':0.9, 'y':0.9})
@@ -26,14 +31,14 @@ class MyApp(App):
         layout.add_widget(add_btn)
 
         # Create list field and clear button
-        self.list_label = Label(text='List', size_hint=(0.9, 0.5), pos_hint={'x':0.01, 'y':0.2}, color=(1,1,1,1), halign='center', valign='top')
+        self.list_label = Label(text='List', size_hint=(0.9, 0.5), pos_hint={'x':0.01, 'y':0.2}, color=(0,0,0,1), halign='center', valign='top')
         clear_btn = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x':0.37, 'y':0.1})
         clear_btn.bind(on_press=self.clear_list)
         layout.add_widget(self.list_label)
         layout.add_widget(clear_btn)
 
         # Create current value field and next button
-        self.value_label = Label(text='Current turn', size_hint=(0.9, 0.1), pos_hint={'x':0.01, 'y':0.7}, color=(1,1,1,1), halign='center', valign='top')
+        self.value_label = Label(text='Current turn', size_hint=(0.9, 0.1), pos_hint={'x':0.01, 'y':0.7}, color=(0,0,0,1), halign='center', valign='top')
         next_btn = Button(text='Next', size_hint=(0.2, 0.2), pos_hint={'x':0.75, 'y':0.5})
         next_btn.bind(on_press=self.show_next_value)
         layout.add_widget(self.value_label)

@@ -20,20 +20,21 @@ class MyFloatLayout(FloatLayout):
         # Create an empty list to store name-value pairs
         self.name_value_list = []
         
-        # Create input fields for name and value
+        # Create input field for name
         self.name_input = TextInput(hint_text='Enter Name', size_hint=(0.8, 0.1), pos_hint={'x': 0.1, 'y': 0.8})
         self.add_widget(self.name_input)
         
+        # Create input field for value
         self.value_input = TextInput(hint_text='Enter Value', size_hint=(0.8, 0.1), pos_hint={'x': 0.1, 'y': 0.6})
         self.add_widget(self.value_input)
         
         # Create a button to add name and value to list
-        self.add_button = Button(text='Add to List', size_hint=(0.4, 0.1), pos_hint={'x': 0.3, 'y': 0.4})
+        self.add_button = Button(text='Add', size_hint=(0.4, 0.1), pos_hint={'x': 0.3, 'y': 0.4})
         self.add_button.bind(on_press=self.add_to_list)
         self.add_widget(self.add_button)
         
         # Create a label to display the list of name-value pairs
-        self.label = Label(text='Test', size_hint=(0.8, 0.4), pos_hint={'x': 0.1, 'y': 0}, color=(1, 1, 1, 1))
+        self.label = Label(text='List', size_hint=(0.8, 0.4), pos_hint={'x': 0.1, 'y': 0}, color=(1, 1, 1, 1))
         self.add_widget(self.label)
         
         # Create a button to close the app

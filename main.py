@@ -42,12 +42,15 @@ class MyApp(App):
 
     # Function for adding name and value to the list and sort in reverse order
     def add_to_list(self, name, value):
-        if name and value:
-            self.list.append((name, value))
-            self.list.sort(key=lambda x: x[1], reverse=True)
-            self.update_list_label()
-            self.name_input.text = ''
-            self.value_input.text = ''
+        try:
+            if name and value:
+                self.list.append((name, int(value)))
+                self.list.sort(key=lambda x: x[1], reverse=True)
+                self.update_list_label()
+                self.name_input.text = ''
+                self.value_input.text = ''
+        except:
+            pass
 
     # Function to clear the list
     def clear_list(self, instance):

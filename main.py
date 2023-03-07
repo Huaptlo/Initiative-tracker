@@ -40,22 +40,26 @@ class MyApp(App):
 
         return layout
 
+    # Function for adding name and value to the list and sort in reverse order
     def add_to_list(self, name, value):
         if name and value:
             self.list.append((name, value))
             self.list.sort(key=lambda x: x[1], reverse=True)
             self.update_list_label()
 
+    # Function to clear the list
     def clear_list(self, instance):
         self.list = []
         self.list_label.text = ''
 
+    # Function to show the next value
     def show_next_value(self, instance):
         if self.list:
             self.index = (self.index + 1) % len(self.list)
             name, value = self.list[self.index]
             self.value_label.text = f'{name}: {value}'
 
+    # Function to update the list
     def update_list_label(self):
         self.list_label.text = '\n'.join([f'{name}: {value}' for name, value in self.list])
         if self.list:

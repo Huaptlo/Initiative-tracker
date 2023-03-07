@@ -16,12 +16,12 @@ class MyApp(App):
         layout.add_widget(close_btn)
 
         # Create input fields and add button
-        name_input = TextInput(hint_text='Enter name', size_hint=(0.5, 0.1), pos_hint={'x':0.05, 'y':0.8})
-        value_input = TextInput(hint_text='Enter value', size_hint=(0.15, 0.1), pos_hint={'x':0.55, 'y':0.8})
+        self.name_input = TextInput(hint_text='Enter name', size_hint=(0.5, 0.1), pos_hint={'x':0.05, 'y':0.8})
+        self.value_input = TextInput(hint_text='Enter value', size_hint=(0.15, 0.1), pos_hint={'x':0.55, 'y':0.8})
         add_btn = Button(text='Add', size_hint=(0.15, 0.1), pos_hint={'x':0.7, 'y':0.8})
-        add_btn.bind(on_press=lambda x: self.add_to_list(name_input.text, value_input.text))
-        layout.add_widget(name_input)
-        layout.add_widget(value_input)
+        add_btn.bind(on_press=lambda x: self.add_to_list(self.name_input.text, self.value_input.text))
+        layout.add_widget(self.name_input)
+        layout.add_widget(self.value_input)
         layout.add_widget(add_btn)
 
         # Create list field and clear button
@@ -46,6 +46,8 @@ class MyApp(App):
             self.list.append((name, value))
             self.list.sort(key=lambda x: x[1], reverse=True)
             self.update_list_label()
+            self.name_input.text = ''
+            self.value_input.text = ''
 
     # Function to clear the list
     def clear_list(self, instance):

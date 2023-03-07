@@ -51,6 +51,7 @@ class MyApp(App):
     def clear_list(self, instance):
         self.list = []
         self.list_label.text = ''
+        self.value_label.text = ''
 
     # Function to show the next value
     def show_next_value(self, instance):

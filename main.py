@@ -10,7 +10,7 @@ class MyApp(App):
     def build(self):
         layout = FloatLayout()
         self.list = []
-        
+
         # Create close button
         close_btn = Button(text='X', size_hint=(0.1, 0.1), pos_hint={'x':0.9, 'y':0.9})
         close_btn.bind(on_press=self.stop)

@@ -25,14 +25,14 @@ class MyApp(App):
         layout.add_widget(add_btn)
 
         # Create list field and clear button
-        self.list_label = Label(text='List', size_hint=(0.9, 0.5), pos_hint={'x':0.01, 'y':0.2}, color=(1,1,1,1), halign='left', valign='top')
+        self.list_label = Label(text='List', size_hint=(0.9, 0.5), pos_hint={'x':0.01, 'y':0.2}, color=(1,1,1,1), halign='center', valign='top')
         clear_btn = Button(text='Clear', size_hint=(0.2, 0.1), pos_hint={'x':0.37, 'y':0.1})
         clear_btn.bind(on_press=self.clear_list)
         layout.add_widget(self.list_label)
         layout.add_widget(clear_btn)
 
         # Create current value field and next button
-        self.value_label = Label(text='Current turn', size_hint=(0.9, 0.1), pos_hint={'x':0.01, 'y':0.7}, color=(1,1,1,1), halign='center', valign='middle')
+        self.value_label = Label(text='Current turn', size_hint=(0.9, 0.1), pos_hint={'x':0.01, 'y':0.7}, color=(1,1,1,1), halign='center', valign='top')
         next_btn = Button(text='Next', size_hint=(0.2, 0.2), pos_hint={'x':0.75, 'y':0.5})
         next_btn.bind(on_press=self.show_next_value)
         layout.add_widget(self.value_label)

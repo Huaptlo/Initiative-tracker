@@ -22,8 +22,8 @@ class MyApp(App):
         layout.add_widget(self.close_btn)
 
         # Create text input fields
-        self.name_input = TextInput(hint_text='Enter name', size_hint=(0.5, 0.1), pos_hint={'x':0.05, 'y':0.8}, multiline=False)
-        self.value_input = TextInput(hint_text='Enter value', size_hint=(0.15, 0.1), pos_hint={'x':0.55, 'y':0.8}, multiline=False)
+        self.name_input = TextInput(hint_text='Enter name', size_hint=(0.5, 0.1), pos_hint={'x':0.05, 'y':0.8}, font_size=20, multiline=False)
+        self.value_input = TextInput(hint_text='Value', size_hint=(0.15, 0.1), pos_hint={'x':0.55, 'y':0.8}, font_size=20, multiline=False)
         layout.add_widget(self.name_input)
         layout.add_widget(self.value_input)
     
@@ -33,7 +33,7 @@ class MyApp(App):
         layout.add_widget(self.add_btn)
 
         # Create list field
-        self.list_label = Label(text='List', size_hint=(0.9, 0.5), pos_hint={'x':0.01, 'y':0.2}, color=(0,0,0,1), halign='center', valign='top')
+        self.list_label = Label(text='List', size_hint=(0.9, 0.5), pos_hint={'x':0.01, 'y':0.2}, color=(0,0,0,1), font_size=20)
         layout.add_widget(self.list_label)
 
         # Create clear button
@@ -42,7 +42,7 @@ class MyApp(App):
         layout.add_widget(self.clear_btn)
 
         # Create current value field and next button
-        self.value_label = Label(text='Current turn', size_hint=(0.9, 0.1), pos_hint={'x':0.01, 'y':0.7}, color=(0,0,0,1), halign='center', valign='top')
+        self.value_label = Label(text='Current turn', size_hint=(0.9, 0.1), pos_hint={'x':0.01, 'y':0.7}, color=(0,0,0,1), font_size=30)
         layout.add_widget(self.value_label)
 
         # Create next button

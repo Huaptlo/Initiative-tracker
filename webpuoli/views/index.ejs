@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Thats cool init?</title>
   <link rel="stylesheet" href="/css/styles.css">
-  
+
 </head>
+
 <body>
   <div class="container">
     <h1>Initiative tracker</h1>
-      <form action="/" method="post">
-        <label for="name">Name:</label>
-        <input type="text"  name="chrName" required autocomplete="off">
-        <label  for="initiative">Initiative:</label>
-        <input type="number"  name="chrIniti" min="1" max="100" required autocomplete="off">
-        <input type="submit" value="Add Character">
-      </form>
-    </div>
-    <div class ="characterList" id="characterList">
+    <form action="/" method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="chrName" required autocomplete="off">
+      <label for="initiative">Initiative:</label>
+      <input type="number" name="chrIniti" min="1" max="100" required autocomplete="off">
+      <input type="submit" value="Add Character">
+    </form>
+  </div>
+
+  <div class="characterList" id="characterList">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Initiative</th>
+      </tr>
+    </table>
     <table id="table1">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Initiative</th>
-        </tr>
-      </thead>
       <tbody>
         <% chrList.forEach(function(character) { %>
           <tr>
-            <td class="name" id="nameList"><%= character.name %></td>
-            <td class="initiative" id="initiativeList"><%= character.initiative %></td>
+            <td class="name" id="nameList">
+              <%= character.name %>
+            </td>
+            <td class="initiative" id="initiativeList">
+              <%= character.initiative %>
+            </td>
           </tr>
-        <% }); %>
+          <% }); %>
       </tbody>
     </table>
   </div>
@@ -39,9 +46,10 @@
   <div id="buttons">
     <button id="startEncounter">Start Encounter</button>
     <button id="endEncounter" disabled>End Encounter</button>
-    <button id="nextTurn" disabled>Next Turn</button>
+    <button id="nextButton" disabled>Next Turn</button>
   </div>
 
-  <script charset="UTF-8" src="/webpuoli/script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

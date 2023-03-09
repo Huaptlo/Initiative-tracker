@@ -10,11 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 //luodaan uusi lista hahmoille
-const chrList = [
-  { name: "Jorgovich", initiative: 40 },
-  { name: "Robert", initiative: 2 },
-  { name: "Peikko", initiative: 69 },
-];
+const chrList = [];
 
 app.get('/', (req, res) => {
   // renderoidaan servu

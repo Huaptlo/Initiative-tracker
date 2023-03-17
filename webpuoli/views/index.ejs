@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <h1>Initiative tracker</h1>
-    <form action="/" method="post">
+    <form action="/chr" method="post" class="mainForm" id="makeChr">
       <label for="name">Name:</label>
       <input type="text" name="chrName" required autocomplete="off">
       <label for="initiative">Initiative:</label>
@@ -45,7 +45,9 @@
 
   <div id="buttons">
     <button id="startEncounter">Start Encounter</button>
+    <form action="/clear" method="post" class="secondForm">
     <button id="endEncounter" disabled>End Encounter</button>
+    </form>
     <button id="nextButton" disabled>Next Turn</button>
   </div>
 

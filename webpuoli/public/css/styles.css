@@ -38,7 +38,13 @@ th {
   max-width: 50%;
 }
 
-form {
+form{
+  margin: 0px;
+  padding: 0px;
+  display: inline-flex;
+}
+
+.mainForm {
   display: flex;
   flex-direction: column;
   max-width: 60%;
@@ -48,6 +54,7 @@ form {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 
 label,
 input {
@@ -81,13 +88,14 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 600px) {
-  form {
+  #makeChr {
     max-width: 100%;
   }
 }
 
 #buttons {
   text-align:center;
+  flex-direction: row;
 }
 
 

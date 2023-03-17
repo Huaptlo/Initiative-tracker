@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.render('index', { chrList });
 });
 
-app.post('/', (req, res) => {
+app.post('/chr', (req, res) => {
 
   //luodaan hahmo objecti
   let newCharacter = {
@@ -30,6 +30,17 @@ app.post('/', (req, res) => {
   chrList.sort((a, b) => b.initiative - a.initiative);
   // sortataan lista initiative muuttujan mukaan
   res.redirect('/');
+});
+
+
+//TODO clear func
+app.post("/clear", (req, res) => {
+  
+  while(chrList.length > 0) {
+    chrList.pop()
+  }
+
+  res.redirect("/");
 });
 
 app.listen(3000, () => {
